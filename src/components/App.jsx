@@ -1,16 +1,18 @@
-export const App = () => {
+import { Link, Route, Routes } from 'react-router-dom';
+
+export default function App() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <div>
+        <nav>
+          <Link>Home</Link>
+          <Link>Movies</Link>
+        </nav>
+      </div>
+      <Routes>
+        <Route>Home</Route>
+        <Route>Movies</Route>
+      </Routes>
     </div>
   );
-};
+}
