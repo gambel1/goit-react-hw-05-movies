@@ -1,36 +1,48 @@
-import SearchForm from '../components/SearchForm/SearchForm';
-import TrendingList from '../components/TrendingList/TrendingList';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import { fetchMoviesByName } from '../api/fetchApi';
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import SearchBar from '../components/Search/Search';
+import MoviesCard from '../components/TrendingList/TrendingList';
 
 export default function Movies() {
-  const [movies, setMovies] = useState([]);
-  const [query, setQuery] = useState('');
-  const [searchParams, setSearchParams] = useSearchParams();
+  const { search } = useLocation();
+  const query = new URLSearchParams(search).get('query') ?? '';
+
+  const [movies, setMovies] = useState(null);
 
   useEffect(() => {
-    const query = searchParams.get('query') ?? '';
-    if (!query) {
-      return;
+    if (query !== '') {
+      fetchMoviesByName(query).then(({ results }) => {
+        const moviesArr = [];
+
+        results.map(
+          ({ id, original_title, poster_path, vote_average, vote_count }) => {
+            const movie = {
+              id,
+              title: original_title,
+              poster: poster_path,
+              voteAverage: vote_average,
+              voteCount: vote_count,
+            };
+
+            return moviesArr.push(movie);
+          },
+        );
+
+        setMovies(moviesArr);
+      });
     }
-
-    fetchMoviesByName(query).then(setMovies);
-  }, [searchParams]);
-
-  const handleChange = event => {
-    setQuery(event.currentTarget.value.toLowerCase());
-  };
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    setSearchParams(query !== '' ? { query } : {});
-  };
+  }, [query]);
 
   return (
     <>
-      <SearchForm onChange={handleChange} onSubmit={handleSubmit} />
-      <TrendingList movies={movies} />
+      <SearchBar />
+      {movies && (
+        <div>
+          <MoviesCard movies={movies} />
+        </div>
+      )}
     </>
   );
 }

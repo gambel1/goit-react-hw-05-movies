@@ -1,16 +1,38 @@
-import TrendingList from '../components/TrendingList/TrendingList';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { fetchTrendMovies } from '../api/fetchApi';
-export default function Home() {
-  const [movies, setMovies] = useState([]);
+
+import TrendingList from '../components/TrendingList/TrendingList';
+
+export default function HomePage() {
+  const [movies, setMovies] = useState(null);
 
   useEffect(() => {
-    fetchTrendMovies().then(setMovies);
+    fetchTrendMovies().then(({ results }) => {
+      const moviesArr = [];
+
+      results.map(
+        ({ id, original_title, poster_path, vote_average, vote_count }) => {
+          const movie = {
+            id,
+            title: original_title,
+            poster: poster_path,
+            voteAverage: vote_average,
+            voteCount: vote_count,
+          };
+
+          return moviesArr.push(movie);
+        },
+      );
+
+      setMovies(moviesArr);
+    });
   }, []);
 
   return (
-    <>
-      <TrendingList movies={movies} />
-    </>
+    movies && (
+      <div>
+        <TrendingList movies={movies} />
+      </div>
+    )
   );
 }

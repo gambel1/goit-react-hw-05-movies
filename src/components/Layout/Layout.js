@@ -1,7 +1,9 @@
-import { Suspense } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Header, HeaderUl, HeaderLink, Main } from './Layout.styled';
 
-export default function Layout() {
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
+
+export default function Layout({ title }) {
   const navItems = [
     { href: '/', text: 'Home' },
     { href: 'movies', text: 'Movies' },
@@ -9,26 +11,27 @@ export default function Layout() {
 
   return (
     <>
-      <header>
-        <div className="container">
+      <Header>
+        <div>
           <nav>
-            <ul>
+            <HeaderUl>
               {navItems.map(({ href, text }) => (
                 <li key={href}>
-                  <Link to={href}>{text}</Link>
+                  <HeaderLink to={href}>{text}</HeaderLink>
                 </li>
               ))}
-            </ul>
+            </HeaderUl>
           </nav>
         </div>
-      </header>
-      <main>
+      </Header>
+      <Main>
         <div className="container">
+          <h1>{title}</h1>
           <Suspense fallback={null}>
             <Outlet />
           </Suspense>
         </div>
-      </main>
+      </Main>
     </>
   );
 }
