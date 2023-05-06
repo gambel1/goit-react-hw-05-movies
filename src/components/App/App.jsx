@@ -1,4 +1,5 @@
 import Layout from '../Layout/Layout';
+import NotFound from '../NotFound/NotFound';
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
@@ -15,7 +16,7 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/movies/:movieId/*" element={<MovieDetailsPage />} />
-            <Route path="*" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Suspense>
