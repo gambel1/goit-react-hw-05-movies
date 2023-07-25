@@ -22,9 +22,7 @@ export default function MovieDetails({ movieInfo }) {
 
   return (
     <div>
-      <ListButton type="button" onClick={back}>
-        Go back
-      </ListButton>
+      <ListButton onClick={back}>Go back</ListButton>
 
       <div>
         <img src={`${imgBaseUrl}${poster}`} alt={title} />

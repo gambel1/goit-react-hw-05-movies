@@ -1,5 +1,5 @@
-import { Header, HeaderUl, HeaderLink, Main } from './Layout.styled';
-
+import { Header, ListH1, HeaderUl, HeaderLink, Main } from './Layout.styled';
+// import { Button } from 'antd';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ export default function Layout({ title }) {
   return (
     <>
       <Header>
-        <div>
+        <div className="container">
           <nav>
             <HeaderUl>
               {navItems.map(({ href, text }) => (
@@ -26,7 +26,8 @@ export default function Layout({ title }) {
       </Header>
       <Main>
         <div className="container">
-          <h1>{title}</h1>
+          {/* <h1>{title}</h1> */}
+          <ListH1>Trending list</ListH1>
           <Suspense fallback={null}>
             <Outlet />
           </Suspense>

@@ -1,21 +1,19 @@
-import { ListH1 } from './TrendingList.styled';
-import { ListP, ListImg } from './TrendingList.styled';
+import { ListUl, ListLi, ListLink, ListP } from './TrendingList.styled';
 import propTypes from 'prop-types';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w500/';
 
 export default function TrendingList({ movies }) {
   const location = useLocation();
   return (
-    <ul>
-      <ListH1>Trending list</ListH1>
+    <ListUl>
       {movies.map(({ id, title, poster, voteAverage, voteCount }) => {
         return (
-          <li>
-            <Link to={`/movies/${id}`} state={{ from: location }}>
+          <ListLi>
+            <ListLink to={`/movies/${id}`} state={{ from: location }}>
               <ListP>{title ? title : 'Movie without a title'}</ListP>
-              <ListImg src={`${imgBaseUrl}${poster}`} alt={title} />
+              <img src={`${imgBaseUrl}${poster}`} alt={title} />
               <div>
                 <ListP>
                   Vote average: <span>{voteAverage}</span>
@@ -24,11 +22,11 @@ export default function TrendingList({ movies }) {
                   Vote count:<span> {voteCount}</span>
                 </ListP>
               </div>
-            </Link>
-          </li>
+            </ListLink>
+          </ListLi>
         );
       })}
-    </ul>
+    </ListUl>
   );
 }
 
