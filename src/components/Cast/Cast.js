@@ -1,8 +1,8 @@
+import { fetchMoviesCast } from '../../api/fetchApi';
+import { ActorListUl, ActorListLi, ActorListTitleP } from './Cast.styled';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import propTypes from 'prop-types';
-
-import { fetchMoviesCast } from '../../api/fetchApi';
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w500/';
 
@@ -31,18 +31,18 @@ export default function Cast() {
   return (
     actors && (
       <div>
-        <ul>
+        <ActorListUl>
           {actors.map(({ id, name, photo }) => {
             return (
-              <li key={id}>
+              <ActorListLi key={id}>
                 <div>
                   <img src={`${imgBaseUrl}${photo}`} alt={name} />
                 </div>
-                <p>{name}</p>
-              </li>
+                <ActorListTitleP>{name}</ActorListTitleP>
+              </ActorListLi>
             );
           })}
-        </ul>
+        </ActorListUl>
       </div>
     )
   );

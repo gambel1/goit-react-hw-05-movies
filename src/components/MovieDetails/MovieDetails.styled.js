@@ -4,19 +4,98 @@ import { Button } from 'antd';
 
 export const ListButton = styled(Button)`
   margin-bottom: 10px;
-  /* border-radius: 4px;
-  cursor: pointer;
+`;
 
-  :hover {
-    color: red;
-  } */
+export const ListWrapDiv = styled.div`
+  display: flex;
+  gap: 30px;
+  margin-bottom: 10px;
 `;
 
 export const ListH2 = styled.h2`
+  text-align: center;
   margin-bottom: 5px;
 `;
 
-export const ListP = styled.p`
+export const ListLi = styled.li`
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+`;
+
+export const ListTitleGenreH3 = styled.h4`
+  font-size: inherit;
+  font-weight: 600;
+  margin-right: 46px;
+`;
+
+export const ListTitleGenreP = styled.p`
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5714285714285714;
+  color: rgba(0, 0, 0, 0.45);
+`;
+
+export const ListDescriptionDiv = styled.div`
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+`;
+
+export const ListTitleDescriptionH3 = styled.h4`
+  font-size: inherit;
+  font-weight: 600;
+`;
+
+export const ListDescriptionTitleP = styled.p`
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5714285714285714;
+  color: rgba(0, 0, 0, 0.45);
+`;
+
+export const ListRatingBoxUl = styled.ul`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+`;
+
+export const ListRatingBoxLi = styled.li`
+  display: flex;
+  gap: 5px;
+`;
+
+export const ListRatingBoxSecondaryLi = styled.li`
+  display: flex;
+  gap: 20px;
+`;
+
+export const ListRatingTitleH3 = styled.h4`
+  font-size: inherit;
+  font-weight: 600;
+`;
+
+export const ListRatingP = styled.p`
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5714285714285714;
+  color: rgba(0, 0, 0, 0.45);
+`;
+
+export const AdditionalListH3 = styled.h3`
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 7px 15px;
+
+  width: fit-content;
+  border-radius: 2px;
+  color: #ffffff;
+  background-color: #2f364a;
+`;
+
+export const AdditionalListLi = styled.li`
   margin-bottom: 5px;
 `;
 

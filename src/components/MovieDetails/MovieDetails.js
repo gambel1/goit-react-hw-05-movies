@@ -1,6 +1,28 @@
-import { ListButton, ListH2, ListP, ListLink } from './MovieDetails.styled';
+import {
+  ListButton,
+  ListWrapDiv,
+  ListH2,
+  ListLi,
+  ListTitleGenreH3,
+  ListTitleGenreP,
+  ListDescriptionDiv,
+  ListTitleDescriptionH3,
+  ListDescriptionTitleP,
+  ListRatingBoxUl,
+  ListRatingBoxLi,
+  ListRatingBoxSecondaryLi,
+  ListRatingTitleH3,
+  ListRatingP,
+  AdditionalListH3,
+  AdditionalListLi,
+  ListLink,
+} from './MovieDetails.styled';
+
 import { useLocation, useNavigate } from 'react-router-dom';
 import propTypes from 'prop-types';
+import { Typography } from 'antd';
+
+const { Text } = Typography;
 
 export default function MovieDetails({ movieInfo }) {
   const location = useLocation();
@@ -24,43 +46,54 @@ export default function MovieDetails({ movieInfo }) {
     <div>
       <ListButton onClick={back}>Go back</ListButton>
 
-      <div>
+      <ListWrapDiv>
         <img src={`${imgBaseUrl}${poster}`} alt={title} />
         <div>
           <div>
             <ListH2>{title}</ListH2>
-            <p>{releaseDate}</p>
+            <Text keyboard>{releaseDate}</Text>
           </div>
           <ul>
-            {genres && genres.map(({ name, id }) => <li key={id}>{name}</li>)}
+            <ListLi>
+              <ListTitleGenreH3 strong>Genre:</ListTitleGenreH3>
+              {genres &&
+                genres.map(({ name, id }) => (
+                  <ListTitleGenreP key={id}>{name}</ListTitleGenreP>
+                ))}
+            </ListLi>
           </ul>
-          <ListP>{description}</ListP>
+          <ListDescriptionDiv>
+            <ListTitleDescriptionH3>Descriptions:</ListTitleDescriptionH3>
+            <ListDescriptionTitleP> {description}</ListDescriptionTitleP>
+          </ListDescriptionDiv>
+          <ListRatingBoxUl>
+            <ListRatingBoxLi>
+              <ListRatingTitleH3>Vote average:</ListRatingTitleH3>
+              <ListRatingP>{voteAverage}</ListRatingP>
+            </ListRatingBoxLi>
+            <ListRatingBoxSecondaryLi>
+              <ListRatingTitleH3>Vote count:</ListRatingTitleH3>
+              <ListRatingP>{voteCount}</ListRatingP>
+            </ListRatingBoxSecondaryLi>
+          </ListRatingBoxUl>
+
           <div>
-            <ListP>
-              Vote average: <span>{voteAverage}</span>
-            </ListP>
-            <ListP>
-              Vote count: <span>{voteCount}</span>
-            </ListP>
+            <AdditionalListH3>Additional Information</AdditionalListH3>
+            <ul>
+              <AdditionalListLi>
+                <ListLink to="cast" state={{ from: subLocation }}>
+                  Cast
+                </ListLink>
+              </AdditionalListLi>
+              <li>
+                <ListLink to="reviews" state={{ from: subLocation }}>
+                  Reviews
+                </ListLink>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-
-      <div>
-        <ListP>Additional Information</ListP>
-        <ul>
-          <li>
-            <ListLink to="cast" state={{ from: subLocation }}>
-              Cast
-            </ListLink>
-          </li>
-          <li>
-            <ListLink to="reviews" state={{ from: subLocation }}>
-              Reviews
-            </ListLink>
-          </li>
-        </ul>
-      </div>
+      </ListWrapDiv>
     </div>
   );
 }

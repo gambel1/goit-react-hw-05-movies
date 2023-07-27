@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { fetchMoviesByName } from '../api/fetchApi';
-import SearchBar from '../components/Search/Search';
+import SearchBar from '../components/SearchForm/SearchForm';
 import MoviesCard from '../components/TrendingList/TrendingList';
 
 export default function Movies() {
