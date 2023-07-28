@@ -21,7 +21,7 @@ export default function TrendingList({ movies }) {
       <ListUl>
         {movies.map(({ id, title, poster, voteAverage, voteCount }) => {
           return (
-            <ListLi>
+            <ListLi key={id}>
               <ListLink to={`/movies/${id}`} state={{ from: location }}>
                 <ListTitleP>
                   {title ? title : 'Movie without a title'}

@@ -1,7 +1,17 @@
+import { Button, Result } from 'antd';
 export default function NotFound() {
   return (
-    <div>
-      <h2>404</h2>
-    </div>
+    <>
+      <Result
+        status="404"
+        title="404"
+        subTitle="Sorry, the page you visited does not exist."
+        extra={
+          <Button type="primary" href="/goit-react-hw-05-movies">
+            Back Home
+          </Button>
+        }
+      />
+    </>
   );
 }

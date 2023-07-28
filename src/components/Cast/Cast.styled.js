@@ -12,4 +12,5 @@ export const ActorListLi = styled.li`
 
 export const ActorListTitleP = styled.p`
   text-align: center;
+  margin-top: 5px;
 `;

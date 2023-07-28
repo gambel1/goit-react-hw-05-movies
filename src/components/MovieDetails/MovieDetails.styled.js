@@ -100,7 +100,9 @@ export const AdditionalListLi = styled.li`
 `;
 
 export const ListLink = styled(NavLink)`
+  font-weight: 600;
   margin-bottom: 5px;
+  color: #000000;
 
   :hover {
     color: red;

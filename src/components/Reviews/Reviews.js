@@ -1,3 +1,4 @@
+import { ListReviewsAuthorH4, ListReviewsDescriptionP } from './Reviews.styled';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMoviesReviews } from '../../api/fetchApi';
@@ -30,8 +31,8 @@ export default function Reviews() {
         {reviews.map(({ id, author, text }) => {
           return (
             <li key={id}>
-              <p>{author}</p>
-              <p>{text}</p>
+              <ListReviewsAuthorH4>{author}</ListReviewsAuthorH4>
+              <ListReviewsDescriptionP>{text}</ListReviewsDescriptionP>
             </li>
           );
         })}
