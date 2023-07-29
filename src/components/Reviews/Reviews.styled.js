@@ -14,3 +14,7 @@ export const ListReviewsDescriptionP = styled.p`
   line-height: 1.5714285714285714;
   color: rgba(0, 0, 0, 0.45);
 `;
+
+export const NotFoundReviewsH2 = styled.h2`
+  text-align: center;
+`;

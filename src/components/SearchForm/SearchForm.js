@@ -1,8 +1,8 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-// import { Input, Space } from 'antd';
+import { Input, Space } from 'antd';
 
-// const { Search } = Input;
-// const onSearch = value => console.log(value);
+const { Search } = Input;
+const onSearch = value => console.log(value);
 
 export default function SearchForm() {
   const location = useLocation();
@@ -20,19 +20,20 @@ export default function SearchForm() {
 
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
-        {/* <Space direction="vertical">
-          <Search
-            placeholder="input search text"
-            onSearch={onFormSubmit}
-            style={{
-              width: 200,
-            }}
-          />
-        </Space> */}
+      <form>
+        <Search
+          placeholder="input search text"
+          allowClear
+          enterButton="Search"
+          size="medium"
+          onSearch={onFormSubmit}
+          style={{
+            width: '30%',
+          }}
+        />
 
-        <input type="text" name="query" />
-        <button type="submit">Search</button>
+        {/* <input type="text" name="query" />
+        <button type="submit">Search</button> */}
       </form>
     </div>
   );

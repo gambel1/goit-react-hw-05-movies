@@ -3,15 +3,15 @@ import {
   ListWrapDiv,
   ListH2,
   ListLi,
-  ListTitleGenreH3,
+  ListTitleGenreH4,
   ListTitleGenreP,
   ListDescriptionDiv,
-  ListTitleDescriptionH3,
+  ListTitleDescriptionH4,
   ListDescriptionTitleP,
   ListRatingBoxUl,
   ListRatingBoxLi,
   ListRatingBoxSecondaryLi,
-  ListRatingTitleH3,
+  ListRatingTitleH4,
   ListRatingP,
   AdditionalListH3,
   AdditionalListLi,
@@ -55,7 +55,7 @@ export default function MovieDetails({ movieInfo }) {
           </div>
           <ul>
             <ListLi>
-              <ListTitleGenreH3 strong>Genre:</ListTitleGenreH3>
+              <ListTitleGenreH4 strong>Genre:</ListTitleGenreH4>
               {genres &&
                 genres.map(({ name, id }) => (
                   <ListTitleGenreP key={id}>{name}</ListTitleGenreP>
@@ -63,16 +63,16 @@ export default function MovieDetails({ movieInfo }) {
             </ListLi>
           </ul>
           <ListDescriptionDiv>
-            <ListTitleDescriptionH3>Descriptions:</ListTitleDescriptionH3>
+            <ListTitleDescriptionH4>Descriptions:</ListTitleDescriptionH4>
             <ListDescriptionTitleP> {description}</ListDescriptionTitleP>
           </ListDescriptionDiv>
           <ListRatingBoxUl>
             <ListRatingBoxLi>
-              <ListRatingTitleH3>Vote average:</ListRatingTitleH3>
+              <ListRatingTitleH4>Vote average:</ListRatingTitleH4>
               <ListRatingP>{voteAverage}</ListRatingP>
             </ListRatingBoxLi>
             <ListRatingBoxSecondaryLi>
-              <ListRatingTitleH3>Vote count:</ListRatingTitleH3>
+              <ListRatingTitleH4>Vote count:</ListRatingTitleH4>
               <ListRatingP>{voteCount}</ListRatingP>
             </ListRatingBoxSecondaryLi>
           </ListRatingBoxUl>

@@ -1,4 +1,8 @@
-import { ListReviewsAuthorH4, ListReviewsDescriptionP } from './Reviews.styled';
+import {
+  ListReviewsAuthorH4,
+  ListReviewsDescriptionP,
+  NotFoundReviewsH2,
+} from './Reviews.styled';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMoviesReviews } from '../../api/fetchApi';
@@ -40,7 +44,9 @@ export default function Reviews() {
     </div>
   ) : (
     <div>
-      <h2>We don't have any reviews for this movie.</h2>
+      <NotFoundReviewsH2>
+        We don't have any reviews for this movie.
+      </NotFoundReviewsH2>
     </div>
   );
 }

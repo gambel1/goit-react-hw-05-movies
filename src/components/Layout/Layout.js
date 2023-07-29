@@ -1,3 +1,4 @@
+import Footer from 'components/Footer/Footer';
 import { Header, HeaderUl, HeaderLink, Main } from './Layout.styled';
 // import { Button } from 'antd';
 import { Suspense } from 'react';
@@ -32,6 +33,7 @@ export default function Layout({ title }) {
           </Suspense>
         </div>
       </Main>
+      <Footer />
     </>
   );
 }

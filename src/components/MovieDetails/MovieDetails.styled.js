@@ -9,7 +9,7 @@ export const ListButton = styled(Button)`
 export const ListWrapDiv = styled.div`
   display: flex;
   gap: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 `;
 
 export const ListH2 = styled.h2`
@@ -24,7 +24,7 @@ export const ListLi = styled.li`
   margin-bottom: 5px;
 `;
 
-export const ListTitleGenreH3 = styled.h4`
+export const ListTitleGenreH4 = styled.h4`
   font-size: inherit;
   font-weight: 600;
   margin-right: 46px;
@@ -43,7 +43,7 @@ export const ListDescriptionDiv = styled.div`
   margin-bottom: 5px;
 `;
 
-export const ListTitleDescriptionH3 = styled.h4`
+export const ListTitleDescriptionH4 = styled.h4`
   font-size: inherit;
   font-weight: 600;
 `;
@@ -71,7 +71,7 @@ export const ListRatingBoxSecondaryLi = styled.li`
   gap: 20px;
 `;
 
-export const ListRatingTitleH3 = styled.h4`
+export const ListRatingTitleH4 = styled.h4`
   font-size: inherit;
   font-weight: 600;
 `;
