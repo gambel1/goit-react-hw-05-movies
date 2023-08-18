@@ -9,7 +9,7 @@ export const ListButton = styled(Button)`
 export const ListWrapDiv = styled.div`
   display: flex;
   gap: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
 `;
 
 export const ListH2 = styled.h2`

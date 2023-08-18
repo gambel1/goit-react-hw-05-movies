@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
 
+export const ListReviewsUl = styled.ul`
+  margin-bottom: 80px;
+`;
+
 export const ListReviewsAuthorH4 = styled.h4`
   font-weight: 600;
   text-align: center;

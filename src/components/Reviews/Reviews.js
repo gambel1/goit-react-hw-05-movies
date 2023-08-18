@@ -1,4 +1,5 @@
 import {
+  ListReviewsUl,
   ListReviewsAuthorH4,
   ListReviewsDescriptionP,
   NotFoundReviewsH2,
@@ -31,7 +32,7 @@ export default function Reviews() {
 
   return reviews && reviews.length > 0 ? (
     <div>
-      <ul>
+      <ListReviewsUl>
         {reviews.map(({ id, author, text }) => {
           return (
             <li key={id}>
@@ -40,7 +41,7 @@ export default function Reviews() {
             </li>
           );
         })}
-      </ul>
+      </ListReviewsUl>
     </div>
   ) : (
     <div>

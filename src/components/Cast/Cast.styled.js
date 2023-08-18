@@ -4,6 +4,7 @@ export const ActorListUl = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  margin-bottom: 80px;
 `;
 
 export const ActorListLi = styled.li`

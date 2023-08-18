@@ -12,6 +12,7 @@ export const ListUl = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  margin-bottom: 80px;
 `;
 
 export const ListLi = styled.li`
