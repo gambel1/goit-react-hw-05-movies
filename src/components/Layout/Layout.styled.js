@@ -15,8 +15,9 @@ export const HeaderLink = styled(NavLink)`
   color: #ffffff;
   font-size: 26px;
 
-  :hover,
-  :focus {
+  &:hover,
+  &:focus,
+  &.active {
     color: burlywood;
   }
 `;
